@@ -28,7 +28,11 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('BMI CALCULATOR')),
+        title: Center(
+            child: Text(
+          'BMI CALCULATOR',
+          style: kAppbarTextStyle,
+        )),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -105,7 +109,7 @@ class _InputPageState extends State<InputPage> {
                     child: Slider(
                       value: height.toDouble(),
                       activeColor: kInteractiveComponent,
-                      inactiveColor: Colors.grey,
+                      inactiveColor: Color(0xFF7E7E7E),
                       min: 120.0,
                       max: 220.0,
                       onChanged: (double newValue) {

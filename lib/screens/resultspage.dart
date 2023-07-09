@@ -9,7 +9,10 @@ class ResultsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('BMI CALCULATOR'),
+          child: Text(
+            'BMI CALCULATOR',
+            style: kAppbarTextStyle,
+          ),
         ),
       ),
       body: Column(
@@ -38,15 +41,26 @@ class ResultsPage extends StatelessWidget {
                     "Normal",
                     style: kResultsTextStyle,
                   ),
-                  Text(
-                    "20",
-                    style: kBmiTextStyle,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        "20",
+                        style: kBmiTextStyle,
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        "kg/m2",
+                        style: kLabelTextStyle,
+                      )
+                    ],
                   ),
-                  Text(
-                    "Your BMI result is low! you should be in surplus.",
-                    style: kBodyTextStyle,
-                    textAlign: TextAlign.center,
-                  ),
+                  Text("Your BMI result is low! You should be in surplus.",
+                      style: kBodyTextStyle, textAlign: TextAlign.center),
                 ],
               ),
             ),
