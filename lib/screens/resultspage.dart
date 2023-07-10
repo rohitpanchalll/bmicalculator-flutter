@@ -4,6 +4,15 @@ import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation});
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +47,7 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Normal",
+                    resultText.toUpperCase(),
                     style: kResultsTextStyle,
                   ),
                   Row(
@@ -47,7 +56,7 @@ class ResultsPage extends StatelessWidget {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(
-                        "20",
+                        bmiResult,
                         style: kBmiTextStyle,
                       ),
                       SizedBox(
@@ -59,7 +68,7 @@ class ResultsPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  Text("Your BMI result is low! You should be in surplus.",
+                  Text(interpretation,
                       style: kBodyTextStyle, textAlign: TextAlign.center),
                 ],
               ),
